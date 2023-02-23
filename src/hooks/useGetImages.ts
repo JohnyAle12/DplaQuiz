@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import getCharacter, { Character } from '../helpers/getCharacter';
+import getComics, { Comic } from '../helpers/getComics';
 
 export const useGetImages = (character: string) => {
-    const [images, setImages] = useState<Character[]>([]);
+    const [images, setImages] = useState<Comic[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const getImages = async() => {
-        const images = await getCharacter(character);
+        const images = await getComics(character);
         setImages(images);
         setIsLoading(false);
     }

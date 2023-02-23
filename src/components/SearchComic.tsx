@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 type Props = {
-    onAddCharacter: (input: string) => void
+    onAddComic: (input: string) => void
 }
 
-const SearchCharacter = ({ onAddCharacter }: Props) => {
+const SearchComic = ({ onAddComic }: Props) => {
 
     const [input, setInput] = useState('');
 
@@ -13,7 +13,7 @@ const SearchCharacter = ({ onAddCharacter }: Props) => {
 
         if (input.trim().length < 1) return;
 
-        onAddCharacter(input);
+        onAddComic(input);
         setInput('');
     }
 
@@ -23,7 +23,7 @@ const SearchCharacter = ({ onAddCharacter }: Props) => {
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Search your favorite Marvel character"
+                    placeholder="Search your favorite Marvel comic"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                 />
@@ -32,4 +32,4 @@ const SearchCharacter = ({ onAddCharacter }: Props) => {
     );
 }
 
-export default SearchCharacter;
+export default SearchComic;

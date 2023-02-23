@@ -1,25 +1,25 @@
 import { useState } from "react";
-import CharacterGrid from "./components/CharacterGrid";
-import SearchHero from "./components/SearchCharacter";
+import ComicGrid from "./components/ComicGrid";
+import SearchComic from "./components/SearchComic";
 
 function App() {
 
-  const [heroNames, setHeroNames] = useState<string[]>([]);
+  const [comics, setComics] = useState<string[]>([]);
 
-    const onAddCharacter = (value: string) => {
-        if (heroNames.includes(value)) return;
-        setHeroNames([ ...heroNames, value ]);
+    const onAddComic= (value: string) => {
+        if (comics.includes(value)) return;
+        setComics([ ...comics, value ]);
     }
 
   return (
     <div className="container mt-5">
       <div className="row">
-        <SearchHero
-            onAddCharacter={ (value) => onAddCharacter(value) }
+        <SearchComic
+            onAddComic={ (value) => onAddComic(value) }
         />
       </div>
       <div className="row mt-4">
-        { heroNames.map( (hero, index) => <CharacterGrid hero={hero} key={index} /> ) }
+        { comics.map( (comic, index) => <ComicGrid comic={comic} key={index} /> ) }
       </div>
     </div>
   )
