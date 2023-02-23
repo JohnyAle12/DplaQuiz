@@ -13,7 +13,7 @@ export const ComicItem = ({
   image
 }: Props) => {
   return (
-    <div className="col-3 mt-3" key={id}>
+    <div className="col-4 mt-3" key={id}>
       <div className="card">
         <img src={image} className="card-img-top" />
         <div className="card-body">

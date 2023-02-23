@@ -9,7 +9,7 @@ export type Comic = {
     image: string;
 }
 
-const getComics= async(hero: string): Promise<Comic[]> => {
+const getComics= async(comic: string): Promise<Comic[]> => {
 
     const publicKey = '94de8a4da334da786a897b912bbfbd4a',
         privateKey = 'ad3725ccabee5283515d1b13f629ca2c0ca8bc62',
@@ -17,7 +17,7 @@ const getComics= async(hero: string): Promise<Comic[]> => {
 
     const hash = md5(ts + privateKey + publicKey);
 
-    const url = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    const url = `https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}&titleStartsWith=${comic}`;
     const { data } = await axios.get<ComicDataWrapper>(url);
     const result = data.data.results;
 

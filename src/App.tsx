@@ -7,15 +7,15 @@ function App() {
   const [comics, setComics] = useState<string[]>([]);
 
     const onAddComic= (value: string) => {
-        if (comics.includes(value)) return;
-        setComics([ ...comics, value ]);
+      if (comics.includes(value)) return;
+      setComics([ ...comics, value ]);
     }
 
   return (
     <div className="container mt-5">
       <div className="row">
         <SearchComic
-            onAddComic={ (value) => onAddComic(value) }
+          onAddComic={ (value) => onAddComic(value) }
         />
       </div>
       <div className="row mt-4">

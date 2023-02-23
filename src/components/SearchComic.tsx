@@ -14,7 +14,7 @@ const SearchComic = ({ onAddComic }: Props) => {
         if (input.trim().length < 1) return;
 
         onAddComic(input);
-        setInput('');
+        setInput('')
     }
 
     return (
